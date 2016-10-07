@@ -1,4 +1,3 @@
-Exercise22 
 1. Write a program with three functions (func1, func2, func3)
 2. Use the if __name__ technique to separate the importable code from the executable code
 3. Create a main() function and call it.

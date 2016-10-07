@@ -1,4 +1,3 @@
-Exercise1
 a. Create a GitHub account (if you don’t have one)
 b. Log into your lab environment
 c. Create a pynet_test repository on GitHub

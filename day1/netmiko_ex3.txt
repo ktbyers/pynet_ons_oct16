@@ -1,0 +1,3 @@
+In a file define a network device in YAML (compatible with Netmiko)
+Read that file in and connect to the network device using Netmiko
+Display show arp from that device

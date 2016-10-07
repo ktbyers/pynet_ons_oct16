@@ -1,4 +1,3 @@
-Exercise24
 Create a Python package containing three modules each module should contain one function.
 Use __init__.py to integrate the three functions together
 Import the package using import package

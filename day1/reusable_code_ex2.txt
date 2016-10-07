@@ -1,4 +1,3 @@
-Exercise23
 Create a Python module containing a function
 Place this module in your site-packages
 Verify you can reuse this function in another piece script
