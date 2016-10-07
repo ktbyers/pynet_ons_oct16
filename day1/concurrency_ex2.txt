@@ -1,0 +1,4 @@
+1. Write a program that prints the config from 4 arista switches, 1 Juniper SRX, and 2 
+   Cisco IOS devices.
+2. Use threads to accomplish this.
+3. Record the time this takes.
