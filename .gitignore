@@ -87,3 +87,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+day1/my_devices.py
