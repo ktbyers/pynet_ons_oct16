@@ -1,20 +1,31 @@
 #!/usr/bin/env python
+"""Obtain configuration from set of devices in series."""
+from datetime import datetime
 from netmiko import ConnectHandler
-from getpass import getpass
+from my_devices import device_list
 
-device = {
-    'device_type': 'cisco_ios',
-    'ip': '184.105.247.70',
-    'username': 'pyclass',
-    'password': getpass(),
-    'port': 22,
-}
 
-net_connect = ConnectHandler(**device)
-output = net_connect.send_command_expect("show version")
+def main():
+    """Obtain configuration from set of devices in series."""
+    start_time = datetime.now()
+    for a_device in device_list:
+        net_connect = ConnectHandler(**a_device)
+        print '-' * 50
+        print net_connect.find_prompt()
+        print '-' * 50
+        if 'juniper' not in net_connect.device_type:
+            output = net_connect.send_command("show run")
+        else:
+            output = net_connect.send_command("show config")
+        print "\n\n"
+        print '#' * 50
+        print output
+        print '#' * 50
+        print
 
-print
-print '#' * 50
-print output
-print '#' * 50
-print
+    end_time = datetime.now()
+    print "Elapsed time: {}".format(end_time - start_time)
+    print
+
+if __name__ == "__main__":
+    main()
