@@ -1,0 +1,18 @@
+Partner with someone. One of you will configure -spine1; the other -spine2
+
+1. Use nx-api to configure an IP address on Eth2/X.
+
+2. Configure minimal BGP on each spine router using nx-api
+
+router bgp 10
+  neighbor {{ peer_ip }} remote-as 10
+    address-family ipv4 unicast
+
+Note: you might have to configure
+
+license grace-period
+feature bgp
+
+3. Verify BGP configuration reaches established state:
+
+show bgp session
