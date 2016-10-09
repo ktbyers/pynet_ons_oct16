@@ -16,3 +16,5 @@ feature bgp
 3. Verify BGP configuration reaches established state:
 
 show bgp session
+
+4. Save running-config to startup.
