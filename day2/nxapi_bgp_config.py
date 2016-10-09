@@ -96,5 +96,8 @@ def main():
     bgp_out = nxs.show(cmd)
     pprint(bgp_out)
 
+    print "\nSaving config..."
+    print nxs.save()
+
 if __name__ == "__main__":
     main()
