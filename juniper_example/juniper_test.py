@@ -46,6 +46,7 @@ print
 
 # Create config object
 cfg = Config(a_device)
+cfg.lock()
 
 config_str = """
 routing-options {
@@ -59,7 +60,6 @@ routing-options {
 
 cfg.load(config_str, format="text", merge=True)
 #cfg.load(path=config_file, format="text", merge=True)
-#cfg.lock()
 print "Config differences..."
 print '-' * 50
 print cfg.diff()
@@ -98,9 +98,24 @@ print "Current static routes"
 print '-' * 50
 pprint(z_routes.keys())
 
-#print "Rolling back..."
-#cfg.rollback(0)
-#print "Config differences..."
-#print '-' * 50
-#print cfg.diff()
-#
+config_xml = """
+<configuration>
+        <system>
+            <host-name>test-srx1</host-name>
+        </system>
+</configuration>
+"""
+#            <host-name>juniper-srx</host-name>
+print "Testing xml..."
+cfg.load(config_xml, format="xml", merge=True)
+print "Config differences..."
+print '-' * 50
+print cfg.diff()
+
+print "Rolling back..."
+cfg.rollback(0)
+print "Config differences..."
+print '-' * 50
+print cfg.diff()
+
+cfg.unlock()
