@@ -79,7 +79,6 @@ routing-options {
     replace:
     static {
         route 0.0.0.0/0 next-hop 10.220.88.1;
-        route 1.1.6.0/24 next-hop 10.220.88.1;
     }
 } 
 """
@@ -117,5 +116,14 @@ cfg.rollback(0)
 print "Config differences..."
 print '-' * 50
 print cfg.diff()
+
+cfg.load(config_str, format="text", merge=False)
+print "Config differences..."
+print '-' * 50
+print cfg.diff()
+
+print "Committing changes..."
+print '-' * 50
+cfg.commit(comment="Testing commit using PyEZ, Oct9")
 
 cfg.unlock()

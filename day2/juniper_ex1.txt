@@ -1,0 +1,2 @@
+1. Use juniper pyez to retrieve interface statistics.
+2. Retrieve the tx_bytes and rx_bytes for interface 'fe-0/0/7'

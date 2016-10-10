@@ -1,0 +1,11 @@
+1. Use pyez and XML to configure a static route (merge operation).
+
+    'show config | display xml' will help you with the XML 
+
+2. Print the diff() of your changes before committing
+3. Commit the change
+4. Stage another static route change using XML
+5. Rollback your change
+6. Optional, see if you can use Jinja2 templating to template the two routes.
+
+    http://jinja.pocoo.org/docs/dev/intro/#basic-api-usage
