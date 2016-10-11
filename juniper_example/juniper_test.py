@@ -16,11 +16,14 @@ from pprint import pprint
 password = getpass() 
 a_device = Device(host='184.105.247.76', user='pyclass', password=password)
 print a_device.open()
+a_device.timeout = 300
 
 #### Facts
 pprint(a_device.facts)
 
 #### Getter operations
+print "\nLLDP Get"
+print '-' * 50
 lldp = LLDPNeighborTable(a_device)
 lldp.get()
 
@@ -29,10 +32,16 @@ for k, v in lldp.items():
     for entry in v:
         print entry
 
+#### Getter operations
+print "\nEth Port Get"
+print '-' * 50
 eth = EthPortTable(a_device)
 eth.get()
 pprint(eth.items())
 
+#### Getter operations
+print "\nRoute Table Get"
+print '-' * 50
 z_routes = RouteTable(a_device)
 z_routes.get()
 pprint(z_routes.items())

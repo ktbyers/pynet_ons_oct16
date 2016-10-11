@@ -36,4 +36,27 @@ if __name__ == "__main__":
     print nxs_test.show("show hostname")
     print
 
-    
+    ##### RUN-CONFIG
+    print "\nRun"
+    print '-' * 50
+    run_config = nxs_test.running_config
+    print run_config
+
+    # pynxos methods
+    #'backup_running_config', 
+    #'checkpoint', 
+    #'config', 
+    #'config_list', 
+    #'facts', 
+    #'feature', 
+    #'file_copy', 
+    #'file_copy_remote_exists', 
+    #'get_boot_options', 
+    #'reboot', 
+    #'rollback', 
+    #'running_config', 
+    #'save', 
+    #'set_boot_options', 
+    #'show', 
+    #'show_list'
+        
