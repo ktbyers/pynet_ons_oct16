@@ -8,8 +8,6 @@ if __name__ == "__main__":
     pynet_rtr1 = {
         'device_type': 'cisco_ios',
         'ip':   '184.105.247.70',
-#        'device_type': 'cisco_nxos',
-#        'ip':   '85.190.178.3',
         'username': 'pyclass',
         'password': password
     }
