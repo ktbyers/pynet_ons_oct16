@@ -1,0 +1,2 @@
+Remove the two test objects created in the previous exercise from the database.
+

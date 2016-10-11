@@ -1,0 +1,5 @@
+Use Netmiko to connect to each of the devices in the database. Execute 
+'show version' on each device.
+
+Calculate the amount of time required to do this. 
+
