@@ -1,0 +1,21 @@
+---
+
+- name: Nexus VLAN
+  hosts: nexus 
+  gather_facts: false
+
+  vars:
+    device:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        transport: nxapi
+
+  tasks:
+    - name: Nexus VLAN
+      nxos_vlan:
+        provider: "{{ device }}"
+        vlan_id: 500
+        name: BLUE
+        vlan_state: active
+

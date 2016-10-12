@@ -1,0 +1,22 @@
+---
+
+- name: Nexus Facts
+  hosts: nexus 
+  gather_facts: false
+
+  vars:
+    device:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        transport: nxapi
+
+  tasks:
+    - name: Retrieve Nexus Facts
+      nxos_facts:
+        provider: "{{ device }}"
+      register: output
+
+    - name: Print facts
+      debug: msg="{{ output }}"
+

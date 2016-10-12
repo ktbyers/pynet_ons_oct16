@@ -1,0 +1,22 @@
+---
+
+- name: Nexus Ping
+  hosts: nexus 
+  gather_facts: false
+
+  vars:
+    device:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        transport: nxapi
+
+  tasks:
+    - name: Nexus Ping
+      nxos_ping:
+        provider: "{{ device }}"
+        dest: 10.1.1.2
+        vrf: default
+      register: output
+
+    - debug: msg="{{ output }}"
