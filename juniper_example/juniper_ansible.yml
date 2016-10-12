@@ -1,0 +1,37 @@
+---
+
+- name: Juniper Facts
+  hosts: juniper
+  gather_facts: false
+  tasks: 
+    - name: Retrieve Juniper Facts
+      junos_get_facts: host={{ ansible_ssh_host }} user={{ juniper_user }} passwd={{ juniper_passwd }}
+      register: srx_info
+
+    - name: Print SRX information
+      debug: msg="{{ srx_info.facts }}"
+
+- name: Set hostname using conf notation
+  hosts: juniper
+  gather_facts: false
+  tasks: 
+    - name: Set system hostname
+      junos_install_config:
+        host: "{{ ansible_ssh_host }}"
+        file: set_hostname.conf
+        overwrite: false
+        user: "{{ juniper_user }}"
+        passwd: "{{ juniper_passwd }}"
+
+- name: Set hostname using XML
+  hosts: juniper
+  gather_facts: false
+  tasks: 
+    - name: Set system hostname
+      junos_install_config:
+        host={{ ansible_ssh_host }}
+        file=set_hostname.xml
+        overwrite=false
+        user={{ juniper_user }}   
+        passwd={{ juniper_passwd }}
+
