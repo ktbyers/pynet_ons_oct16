@@ -1,7 +1,6 @@
 ---
 - name: NAPALM gather information on EOS
   hosts: pynet-sw1
-  gather_facts: False
   tasks:
     - name: Gather information
       napalm_get_facts:
@@ -19,7 +18,6 @@
 
 - name: NAPALM vlan configuration
   hosts: pynet-sw1
-  gather_facts: False
   tasks:
     - napalm_install_config:
         hostname: "{{ eapi_hostname }}"

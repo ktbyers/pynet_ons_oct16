@@ -1,9 +1,9 @@
-@@ -3,6 +3,8 @@
- ! boot system flash:/vEOS-lab.swi
+@@ -4,7 +4,7 @@
  !
  transceiver qsfp default-mode 4x10G
-+!
-+logging buffered 9000
+ !
+-logging buffered 9000
++logging buffered 10000
  !
  hostname pynet-sw1
  !

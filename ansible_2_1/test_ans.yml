@@ -17,20 +17,23 @@
           - no logging console
         match: line
       tags: logging
+      notify: 
+        - write mem
 
     - name: Configure ACL
       ios_config:
         provider: "{{ creds }}"
+        parents: ["ip access-list extended TEST-ACL"]
         lines: 
           - permit ip host 1.1.1.1 any log
           - permit ip host 2.2.2.2 any log
           - permit ip host 3.3.3.3 any log
           - permit ip host 4.4.4.4 any log
           - permit ip host 5.5.5.5 any log
-        parents: ["ip access-list extended TEST-ACL"]
+          - permit ip host 7.5.5.5 any log
         before: ["no ip access-list extended TEST-ACL"]
         replace: block
-        match: line
+        match: strict
       tags: ACL
       notify: 
         - write mem
