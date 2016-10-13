@@ -90,3 +90,4 @@ ENV/
 
 day1/my_devices.py
 day3/CFGS
+*.retry

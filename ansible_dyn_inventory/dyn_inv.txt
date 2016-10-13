@@ -1,0 +1,11 @@
+
+https://pynet.twb-tech.com/blog/ansible/dynamic-inventory.html
+
+https://github.com/ktbyers/pynet/blob/master/ansible/dyn_inv_v1.py
+
+Must output JSON
+
+--list arg
+--host arg
+
+

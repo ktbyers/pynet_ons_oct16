@@ -1,0 +1,4 @@
+ansible-vault encrypt passwords.yml
+
+ansible-playbook ansible21_ex1.yml --ask-vault-pass
+
